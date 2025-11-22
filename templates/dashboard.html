@@ -1,15 +1,16 @@
+
 {% extends "layout.html" %}
 {% block content %}
 
-<h2>Dashboard</h2>
+<h2 style="margin-top: 20px;">Dashboard</h2>
 
-<p>Welcome, {{ session['user_name'] }}!</p>
+<p>Welcome, <strong>{{ session['user_name'] }}</strong>!</p>
 
 <ul>
-    <li>Total Cars: {{ total_cars }}</li>
-    <li>Total Customers: {{ total_customers }}</li>
-    <li>Total Rentals: {{ total_rentals }}</li>
-    <li>Total Payments: {{ total_payments }}</li>
+    <li><strong>Total Cars:</strong> {{ total_cars }}</li>
+    <li><strong>Total Customers:</strong> {{ total_customers }}</li>
+    <li><strong>Total Rentals:</strong> {{ total_rentals }}</li>
+    <li><strong>Total Payments:</strong> {{ total_payments }}</li>
 </ul>
 
 {% endblock %}
