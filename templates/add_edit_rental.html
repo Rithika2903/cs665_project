@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>{{ 'Edit Rental' if rental else 'Add Rental' }}</h2>
+
+<form method="POST">
+
+    <label>Select Car:</label>
+    <select name="car_id">
+        {% for car in cars %}
+        <option value="{{ car[0] }}" {% if rental and rental[1] == car[1] %}selected{% endif %}>
+            {{ car[1] }} - {{ car[2] }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <label>Select Customer:</label>
+    <select name="customer_id">
+        {% for c in customers %}
+        <option value="{{ c[0] }}" {% if rental and rental[2] == c[1] %}selected{% endif %}>
+            {{ c[1] }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <label>Start Date:</label>
+    <input type="date" name="start_date" value="{{ rental[3] if rental else '' }}">
+
+    <label>End Date:</label>
+    <input type="date" name="end_date" value="{{ rental[4] if rental else '' }}">
+
+    <label>Total Cost:</label>
+    <input type="number" name="total_cost" value="{{ rental[5] if rental else '' }}">
+
+    <label>Status:</label>
+    <select name="status">
+        <option value="Active" {% if rental and rental[6]=='Active' %}selected{% endif %}>Active</option>
+        <option value="Completed" {% if rental and rental[6]=='Completed' %}selected{% endif %}>Completed</option>
+    </select>
+
+    <button type="submit">Save</button>
+
+</form>
+
+{% endblock %}

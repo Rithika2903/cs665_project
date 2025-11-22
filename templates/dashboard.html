@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<p>Welcome, {{ session['user_name'] }}!</p>
+
+<ul>
+    <li>Total Cars: {{ total_cars }}</li>
+    <li>Total Customers: {{ total_customers }}</li>
+    <li>Total Rentals: {{ total_rentals }}</li>
+    <li>Total Payments: {{ total_payments }}</li>
+</ul>
+
+{% endblock %}

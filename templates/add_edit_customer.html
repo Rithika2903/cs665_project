@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>{{ 'Edit Customer' if customer else 'Add Customer' }}</h2>
+
+<form method="POST">
+
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ customer[1] if customer else '' }}">
+
+    <label>Email:</label>
+    <input type="text" name="email" value="{{ customer[2] if customer else '' }}">
+
+    <label>Phone:</label>
+    <input type="text" name="phone" value="{{ customer[3] if customer else '' }}">
+
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

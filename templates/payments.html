@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Payments</h2>
+
+<a href="{{ url_for('add_payment') }}">+ Add Payment</a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Rental</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+
+    {% for p in payments %}
+    <tr>
+        <td>{{ p[0] }}</td>
+        <td>{{ p[1] }}</td>
+        <td>{{ p[2] }}</td>
+        <td>{{ p[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

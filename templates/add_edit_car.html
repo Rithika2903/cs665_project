@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>{{ 'Edit Car' if car else 'Add Car' }}</h2>
+
+<form method="POST">
+    <label>Brand:</label>
+    <input type="text" name="brand" value="{{ car[1] if car else '' }}">
+
+    <label>Model:</label>
+    <input type="text" name="model" value="{{ car[2] if car else '' }}">
+
+    <label>Year:</label>
+    <input type="number" name="year" value="{{ car[3] if car else '' }}">
+
+    <label>Rate per Day:</label>
+    <input type="number" name="rate" value="{{ car[4] if car else '' }}">
+
+    <label>Status:</label>
+    <select name="status">
+        <option value="Available" {% if car and car[5]=='Available' %}selected{% endif %}>Available</option>
+        <option value="Rented" {% if car and car[5]=='Rented' %}selected{% endif %}>Rented</option>
+    </select>
+
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

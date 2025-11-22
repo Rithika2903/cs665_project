@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Rental System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a> |
+    <a href="{{ url_for('cars') }}">Cars</a> |
+    <a href="{{ url_for('customers') }}">Customers</a> |
+    <a href="{{ url_for('rentals') }}">Rentals</a> |
+    <a href="{{ url_for('payments') }}">Payments</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</nav>
+
+<hr>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

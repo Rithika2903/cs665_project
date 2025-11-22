@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Add Payment</h2>
+
+<form method="POST">
+
+    <label>Select Rental:</label>
+    <select name="rental_id">
+        {% for r in rentals %}
+        <option value="{{ r[0] }}">{{ r[0] }} - {{ r[1] }} - {{ r[2] }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Amount:</label>
+    <input type="number" name="amount">
+
+    <label>Date:</label>
+    <input type="date" name="date">
+
+    <button type="submit">Submit Payment</button>
+
+</form>
+
+{% endblock %}
