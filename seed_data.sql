@@ -72,3 +72,4 @@ INSERT INTO payments (rental_id, amount, date) VALUES
 (8, 80, '2025-04-06'),
 (9, 560, '2025-04-14'),
 (10, 70, '2025-04-17');
+-- Seed file verified by Rithika
