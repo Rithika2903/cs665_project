@@ -47,3 +47,4 @@ CREATE TABLE payments (
     date TEXT,
     FOREIGN KEY(rental_id) REFERENCES rentals(id)
 );
+-- Schema reviewed and finalized
