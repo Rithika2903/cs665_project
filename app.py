@@ -425,3 +425,4 @@ if __name__ == "__main__":
     # Use FLASK_DEBUG=1 in development; don't enable debug in production
     debug = bool(int(os.environ.get("FLASK_DEBUG", "1")))
     app.run(debug=debug)
+# CS665 Car Rental Project - Created by Rithika
